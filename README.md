@@ -6,7 +6,7 @@ This project demonstrates the implementation of a virtualized network infrastruc
 ## Network Architecture
 The environment is built within VMware using a segmented topology:
 
-* **Subnet A (Client Zone):** `192.168.10.0/24`
+* **Subnet A (Management Zone):** `192.168.10.0/24`
 * **Subnet B (Server Zone):** `192.168.20.0/24`
 * **Gateway (Router):** * enp2s0: WAN/NAT
     * enp3s0: `192.168.10.1` (Subnet A Gateway)
@@ -28,7 +28,7 @@ A "Default Deny" security posture was implemented to ensure only authorized traf
 Configured IP Masquerading using iptables on the Router's WAN interface. This allows the internal private subnets ('192.168.10.0/24' and '192.168.20.0/24') to reach external resources by sharing the Router's assigned hotspot IP, effectively hiding the internal topology from the external network.
 
 ## Verification and Testing
-To validate the configuration, the following connectivity tests were executed from the Client node (`192.168.10.10`):
+To validate the configuration, the following connectivity tests were executed from the Management node (`192.168.10.10`):
 
 | Test Case | Command | Expected Result | Status |
 | :--- | :--- | :--- | :--- |
