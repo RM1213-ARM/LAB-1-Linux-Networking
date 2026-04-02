@@ -39,9 +39,9 @@ Technical Note: The stateful inspection rule (ESTABLISHED,RELATED) successfully 
 
 * Log Evidence: Verified in /var/log/syslog on the Router:
 
-** kernel: [FW_REJECT: ] IN=enp3s0 OUT=enp26s0 SRC=192.168.10.10 DST=192.168.20.10 PROTO=TCP DPT=23
+* kernel: [FW_REJECT: ] IN=enp3s0 OUT=enp26s0 SRC=192.168.10.10 DST=192.168.20.10 PROTO=TCP DPT=23
 
-## 4. Unidirectional SSH (Lateral Movement Prevention)
+# 4. Unidirectional SSH (Lateral Movement Prevention)
 
 * Test A (Admin Access): SSH from Client to Server.
 
@@ -51,9 +51,9 @@ Technical Note: The stateful inspection rule (ESTABLISHED,RELATED) successfully 
 
 * Result: SUCCESS (BLOCKED) (Connection timeout).
 
-## Conclusion: The management plane is isolated. A compromised Web Server cannot initiate an SSH session back into the internal management subnet.
+Conclusion: The management plane is isolated. A compromised Web Server cannot initiate an SSH session back into the internal management subnet.
 
-# 5. Static Security Analysis (Anti-Spoofing)
+# Static Security Analysis (Anti-Spoofing)
 
 Mechanism: Interface-to-Subnet Binding.
 
