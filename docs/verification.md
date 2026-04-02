@@ -1,17 +1,17 @@
-#Project Verification & Testing Log
+# Project Verification & Testing Log
 
-##Overview
+## Overview
 The following tests were conducted to verify the integrity of the inter-subnet routing and the enforcement of the stateful firewall policy. Testing was performed between the Client VM (192.168.10.10) and the Web Server VM (192.168.20.10) via the Linux Router.
 
-##1. Connectivity & Routing (ICMP)
+## 1. Connectivity & Routing (ICMP)
 
-*Test: Send 4 ICMP echo requests (Ping) from Client to Server.
+* Test: Send 4 ICMP echo requests (Ping) from Client to Server.
 
-*Command: ping -c 4 192.168.20.10
+* Command: ping -c 4 192.168.20.10
 
-*Expected Result: 0% packet loss; successful bidirectional communication.
+* Expected Result: 0% packet loss; successful bidirectional communication.
 
-*Actual Result: ✅ PASS
+* Actual Result: ✅ PASS
 
 Technical Note: Confirmed that the router is correctly forwarding packets between the two physical interfaces (enp3s0 and enp26s0) with ip_forward enabled.
 
