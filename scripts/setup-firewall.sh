@@ -6,7 +6,7 @@
 # ==========================================================
 
 # 1. Define Variables 
-INT_A="enp3s0"           # Interface for Client Subnet
+INT_A="enp3s0"           # Interface for Management Subnet
 INT_B="enp26s0"          # Interface for Server Subnet
 SUBNET_A="192.168.10.0/24"
 SUBNET_B="192.168.20.0/24"
@@ -33,7 +33,7 @@ sudo iptables -A FORWARD -p icmp -s $SUBNET_B -d $SUBNET_A -j ACCEPT
 sudo iptables -A FORWARD -i $INT_A -o $INT_B -p tcp -s $SUBNET_A -d $SUBNET_B --dport 80 -j ACCEPT
 sudo iptables -A FORWARD -i $INT_A -o $INT_B -p tcp -s $SUBNET_A -d $SUBNET_B --dport 443 -j ACCEPT
 
-# Rule: Allow SSH (TCP) Traffic (Only allowing administrative access for remote management from client)
+# Rule: Allow SSH (TCP) Traffic (Only allowing administrative access for remote management from Management VM)
 sudo iptables -A FORWARD -i $INT_A -o $INT_B -p tcp -s $SUBNET_A -d $SUBNET_B --dport 22 -j ACCEPT
 
 # Rule: Log rejected traffic (Provides logging for troubleshooting/security)
